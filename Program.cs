@@ -11,8 +11,8 @@ namespace erewr
         static void Main()
         {
             SaySomething().Wait();
-            //SaySomething1().Wait();
-            //SaySomething2().Wait();
+            SaySomething1().Wait();
+            SaySomething2().Wait();
         }
 
         static async Task SaySomething()
