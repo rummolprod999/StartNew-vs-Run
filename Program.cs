@@ -18,14 +18,16 @@ namespace erewr
         static async Task SaySomething()
         {
             Console.WriteLine("SaySomething Before");
-            await await Task.Factory.StartNew(async () => { await Task.Delay(5000); Console.WriteLine("SaySomething After 5 seconds sleep"); await Task.Delay(5000); Console.WriteLine("SaySomething After 5 seconds sleep");});
+            await Task.Factory.StartNew(async () => { await Task.Delay(5000); Console.WriteLine("SaySomething After 5 seconds sleep"); await Task.Delay(5000); Console.WriteLine("SaySomething After 5 seconds sleep"); });
             Console.WriteLine("SaySomething After");
+            var n = SomethingNumberAsync();
+            await SomethingAsync();
         }
 
         static async Task SaySomething1()
         {
             Console.WriteLine("SaySomething1 Before");
-            await Task.Run(async () => { await Task.Delay(5000); Console.WriteLine("SaySomething1 After 5 seconds sleep");  await Task.Delay(5000); Console.WriteLine("SaySomething1 After 5 seconds sleep");});
+            await Task.Run(async () => { await Task.Delay(5000); Console.WriteLine("SaySomething1 After 5 seconds sleep"); await Task.Delay(5000); Console.WriteLine("SaySomething1 After 5 seconds sleep"); });
             Console.WriteLine("SaySomething1 After");
         }
 
@@ -34,6 +36,23 @@ namespace erewr
             Console.WriteLine("SaySomething2 Before");
             await await Task.Factory.StartNew(async () => { await Task.Delay(5000); });
             Console.WriteLine("SaySomething2 After");
+        }
+
+        static async Task<int> SomethingNumberAsync()
+        {
+            var i = await Task.FromResult(5);
+            var k = await Task.FromResult(5);
+            var z = await Task.FromResult(5);
+            var s = await Task.FromResult("");
+            return await Task.FromResult(i + k + z);
+        }
+
+        static async Task SomethingAsync()
+        {
+            var i = await Task.FromResult(5);
+            var k = await Task.FromResult(5);
+            var z = await Task.FromResult(5);
+            await Task.FromResult(i + k + z);
         }
     }
 }
