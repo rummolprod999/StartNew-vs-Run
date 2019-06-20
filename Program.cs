@@ -12,6 +12,7 @@ namespace erewr
         {
             SaySomething().Wait();
             SaySomething1().Wait();
+            SaySomething2().Wait();
         }
 
         static async Task SaySomething()
@@ -26,6 +27,13 @@ namespace erewr
             Console.WriteLine("SaySomething1 Before");
             await Task.Run(async () => { await Task.Delay(5000); Console.WriteLine("After 5 seconds sleep");  await Task.Delay(5000); });
             Console.WriteLine("SaySomething1 After");
+        }
+
+        static async Task SaySomething2()
+        {
+            Console.WriteLine("SaySomething2 Before");
+            await await Task.Factory.StartNew(async () => { await Task.Delay(5000); });
+            Console.WriteLine("SaySomething2 After");
         }
     }
 }
