@@ -6,8 +6,6 @@ namespace erewr
 {
     class Program
     {
-        private static string result;
-
         static void Main()
         {
             SaySomething().Wait();
@@ -20,7 +18,7 @@ namespace erewr
             Console.WriteLine("SaySomething Before");
             await Task.Factory.StartNew(async () => { await Task.Delay(5000); Console.WriteLine("SaySomething After 5 seconds sleep"); await Task.Delay(5000); Console.WriteLine("SaySomething After 5 seconds sleep"); });
             Console.WriteLine("SaySomething After");
-            var n = SomethingNumberAsync();
+            _ = SomethingNumberAsync();
             await SomethingAsync();
         }
 
@@ -40,10 +38,12 @@ namespace erewr
 
         static async Task<int> SomethingNumberAsync()
         {
+            var m = await Task.FromResult("");
+            await Task.Delay(3000);
             var i = await Task.FromResult(5);
-            var k = await Task.FromResult(5);
-            var z = await Task.FromResult(5);
-            var s = await Task.FromResult("");
+            var k = await Task.FromResult(5 + i);
+            var z = await Task.FromResult(5 + k);
+            var s = await Task.FromResult("" + m);
             return await Task.FromResult(i + k + z);
         }
 
@@ -54,5 +54,6 @@ namespace erewr
             var z = await Task.FromResult(5);
             await Task.FromResult(i + k + z);
         }
+
     }
 }
