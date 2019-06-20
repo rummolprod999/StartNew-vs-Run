@@ -18,14 +18,14 @@ namespace erewr
         static async Task SaySomething()
         {
             Console.WriteLine("SaySomething Before");
-            await Task.Factory.StartNew(async () => { await Task.Delay(5000); });
+            await Task.Factory.StartNew(async () => { await Task.Delay(5000); Console.WriteLine("SaySomething After 5 seconds sleep");});
             Console.WriteLine("SaySomething After");
         }
 
         static async Task SaySomething1()
         {
             Console.WriteLine("SaySomething1 Before");
-            await Task.Run(async () => { await Task.Delay(5000); Console.WriteLine("After 5 seconds sleep");  await Task.Delay(5000); });
+            await Task.Run(async () => { await Task.Delay(5000); Console.WriteLine("SaySomething1 After 5 seconds sleep");  await Task.Delay(5000); });
             Console.WriteLine("SaySomething1 After");
         }
 
