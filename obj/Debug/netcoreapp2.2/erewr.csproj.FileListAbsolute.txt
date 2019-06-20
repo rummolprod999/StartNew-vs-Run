@@ -1,0 +1,11 @@
+/home/alex/Рабочий стол/erewr/obj/Debug/netcoreapp2.2/erewr.csprojAssemblyReference.cache
+/home/alex/Рабочий стол/erewr/obj/Debug/netcoreapp2.2/erewr.csproj.CoreCompileInputs.cache
+/home/alex/Рабочий стол/erewr/obj/Debug/netcoreapp2.2/erewr.AssemblyInfoInputs.cache
+/home/alex/Рабочий стол/erewr/obj/Debug/netcoreapp2.2/erewr.AssemblyInfo.cs
+/home/alex/Рабочий стол/erewr/bin/Debug/netcoreapp2.2/erewr.deps.json
+/home/alex/Рабочий стол/erewr/bin/Debug/netcoreapp2.2/erewr.runtimeconfig.json
+/home/alex/Рабочий стол/erewr/bin/Debug/netcoreapp2.2/erewr.runtimeconfig.dev.json
+/home/alex/Рабочий стол/erewr/bin/Debug/netcoreapp2.2/erewr.dll
+/home/alex/Рабочий стол/erewr/bin/Debug/netcoreapp2.2/erewr.pdb
+/home/alex/Рабочий стол/erewr/obj/Debug/netcoreapp2.2/erewr.dll
+/home/alex/Рабочий стол/erewr/obj/Debug/netcoreapp2.2/erewr.pdb
