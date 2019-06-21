@@ -11,6 +11,7 @@ namespace erewr
             SaySomething().Wait();
             SaySomething1().Wait();
             SaySomething2().Wait();
+            Outher2Async().Wait();
         }
 
         static async Task SaySomething()
@@ -65,6 +66,7 @@ namespace erewr
         {
 
             var n = await MethodAsync();
+            MethodTask().Wait();
             Console.WriteLine(n);
         }
 
@@ -72,6 +74,12 @@ namespace erewr
         {
 
             await Outher1Async();
+        }
+
+        static  Task<int> MethodTask()
+        {
+
+            return Task.Run(() => 1);
         }
     }
 }
