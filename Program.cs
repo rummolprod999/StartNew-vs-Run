@@ -66,8 +66,8 @@ namespace erewr
         {
 
             var n = await MethodAsync();
-            MethodTask().Wait();
-            Console.WriteLine(n);
+            var m = await MethodTask();
+            Console.WriteLine(n + n);
         }
 
         static async Task Outher2Async()
