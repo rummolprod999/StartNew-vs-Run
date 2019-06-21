@@ -55,5 +55,23 @@ namespace erewr
             await Task.FromResult(i + k + z);
         }
 
+        static async Task<int> MethodAsync()
+        {
+
+            return await Task.Run(() => 1);
+        }
+
+        static async Task Outher1Async()
+        {
+
+            var n = await MethodAsync();
+            Console.WriteLine(n);
+        }
+
+        static async Task Outher2Async()
+        {
+
+            await Outher1Async();
+        }
     }
 }
